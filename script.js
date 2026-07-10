@@ -6,26 +6,27 @@
      1. SERIES data          — single source of truth for names, pricing,
                                taglines, photos, and step-up/step-down copy.
                                EDIT PRICING / COPY HERE — it flows to the
-                               homepage ladder, every series-page ladder
+                               homepage lineup, every series-page lineup
                                widget, and the nav automatically.
      2. Nav bar              — injected into  <div id="site-nav">
      3. Footer               — injected into  <div id="site-footer">
-     4. Price ladder         — injected into  <div id="price-ladder">
+     4. Lineup navigator     — injected into  <div id="price-ladder">
                                Two variants:
                                  "full"   — big staircase on the homepage
                                  "widget" — compact strip + step-up/step-down
                                             cards at the bottom of each
                                             series page
-   Each page declares itself with  <body data-page="s">  (or "m", "r", "rx",
-   "q", "qx", "home", "compare"). The nav highlight and ladder highlight key
-   off that attribute.
+   Each page declares itself with  <body data-page="s">  (or "s-one", "lx",
+   "m", "r", "rx", "q", "qx", "home", "compare"). The nav highlight and
+   lineup highlight key off that attribute.
    ========================================================================== */
 
 /* ---------------------------------------------------------------------------
-   1. SERIES DATA — ordered from entry (S) to flagship (QX).
+   1. SERIES DATA — ordered from entry (S One) to flagship (QX).
    ---------------------------------------------------------------------------
+   short:      the label used in the top nav.
    priceBand:  PLACEHOLDER bands — replace with real MY26 dealer MSRP figures
-               before launch. Keep them ascending S -> QX.
+               before launch. Keep them ascending S One -> QX.
    stepUpWhy:  the one-line reason to move UP TO this series (shown on the
                page of the series directly below it).
    stepDownWhy:the one-line reason to move DOWN TO this series (shown on the
@@ -33,33 +34,64 @@
    -------------------------------------------------------------------------- */
 const SERIES = [
   {
+    id: "s-one",
+    name: "S One Series",
+    short: "S One",
+    page: "s-one.html",
+    tag: "Entry · Simple Value",
+    tagline: "The simplest, most affordable way into a new Bennington.",
+    priceBand: "$25K–$35K", /* PLACEHOLDER — replace with real MSRP */
+    photo: "images/placeholder-boat.svg", /* PLACEHOLDER image — swap for real S One photo */
+    stepUpWhy: "", /* nothing below the S One */
+    stepDownWhy:
+      "Step down to S One for the lowest-cost way into a new Bennington.",
+  },
+  {
     id: "s",
     name: "S Series",
+    short: "S",
     page: "s.html",
-    tag: "Entry · Have It Your Way",
-    tagline: "The customizable gateway into the Bennington family.",
+    tag: "Have It Your Way",
+    tagline: "The customizable core of the Bennington family.",
     priceBand: "$35K–$55K", /* PLACEHOLDER — replace with real MSRP */
     photo: "NO Background boat photots/NoBackgroundS-series.png",
-    stepUpWhy: "", /* nothing below the S */
+    stepUpWhy:
+      "Step up to S for the have-it-your-way line with far more upgrades, colors, and floorplans.",
     stepDownWhy:
-      "Step down to S for Bennington's most budget-friendly entry point — still highly customizable.",
+      "Step down to S for a budget-friendlier boat that is still highly customizable.",
+  },
+  {
+    id: "lx",
+    name: "LX Series",
+    short: "LX",
+    page: "lx.html",
+    tag: "Elevated Step-Up",
+    tagline: "A sleeker, better-equipped step beyond the S.",
+    priceBand: "$45K–$65K", /* PLACEHOLDER — replace with real MSRP */
+    photo: "images/placeholder-boat.svg", /* PLACEHOLDER image — swap for real LX photo */
+    stepUpWhy:
+      "Step up to LX for a sleeker look and more standard equipment than the S.",
+    stepDownWhy:
+      "Step down to LX for a lighter price in a streamlined, well-equipped package.",
   },
   {
     id: "m",
     name: "M Series",
+    short: "M",
     page: "m.html",
-    tag: "Step-Up · Soul of the Lineup",
-    tagline: "More standard equipment, more floorplans — the heart of Bennington.",
+    tag: "Soul of the Lineup",
+    tagline: "More standard equipment, more floorplans, the heart of Bennington.",
     priceBand: "$50K–$70K", /* PLACEHOLDER — replace with real MSRP */
     photo: "NO Background boat photots/NoBackgroundM.png",
     stepUpWhy:
-      "Step up to M for more standard equipment and floorplans the S can't reach.",
+      "Step up to M for the soul of the lineup, with more standard equipment and exclusive layouts.",
     stepDownWhy:
       "Step down to M for a more budget-friendly boat that keeps the 2026 Sport/Luxe refresh.",
   },
   {
     id: "r",
     name: "R Series",
+    short: "R",
     page: "r.html",
     tag: "Performance · Most Customizable",
     tagline: "Dynamic performance with extensive luxury floorplans.",
@@ -73,6 +105,7 @@ const SERIES = [
   {
     id: "rx",
     name: "RX Series",
+    short: "RX",
     page: "rx.html",
     tag: "Sport · Athletic Silhouette",
     tagline: "Sport-tuned performance wrapped in plush comfort.",
@@ -86,6 +119,7 @@ const SERIES = [
   {
     id: "q",
     name: "Q Series",
+    short: "Q",
     page: "q.html",
     tag: "Premium · Luxury Cruising",
     tagline: "Luxury amenities and performance, one step below the flagship.",
@@ -99,27 +133,28 @@ const SERIES = [
   {
     id: "qx",
     name: "QX Series",
+    short: "QX",
     page: "qx.html",
     tag: "Flagship · All-New for 2026",
-    tagline: "The pinnacle — fully redesigned for 2026.",
+    tagline: "The pinnacle, fully redesigned for 2026.",
     priceBand: "$150K+", /* PLACEHOLDER — replace with real MSRP */
     photo: "NO Background boat photots/NoBackgroundQX.png",
     stepUpWhy:
-      "Step up to QX for the fully redesigned 2026 flagship — Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
+      "Step up to QX for the fully redesigned 2026 flagship: Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
     stepDownWhy: "", /* nothing above the QX */
   },
 ];
 
 /* Pricing fine print shown wherever a price band appears. */
 const PRICE_DISCLAIMER =
-  "Starting MSRP, MY26 — excludes destination fee, options, and dealer fees. " +
+  "Starting MSRP, MY26. Excludes destination fee, options, and dealer fees. " +
   "Contact your dealer for exact pricing. (Price bands shown are placeholders.)";
 
 /* Which page are we on? Set via <body data-page="..."> on every page. */
 const CURRENT_PAGE = document.body.dataset.page || "home";
 
 /* ---------------------------------------------------------------------------
-   2. NAV BAR — Home | S | M | R | RX | Q | QX | Compare
+   2. NAV BAR — Home | S One | S | LX | M | R | RX | Q | QX | Compare
    -------------------------------------------------------------------------- */
 function renderNav() {
   const mount = document.getElementById("site-nav");
@@ -127,7 +162,7 @@ function renderNav() {
 
   const links = [
     { id: "home", label: "Home", href: "index.html" },
-    ...SERIES.map((s) => ({ id: s.id, label: s.name.split(" ")[0], href: s.page })),
+    ...SERIES.map((s) => ({ id: s.id, label: s.short, href: s.page })),
     { id: "compare", label: "Compare", href: "compare.html" },
   ];
 
@@ -173,13 +208,15 @@ function renderFooter() {
 }
 
 /* ---------------------------------------------------------------------------
-   4. PRICE LADDER — the reusable component.
+   4. LINEUP NAVIGATOR — the reusable component.
    ---------------------------------------------------------------------------
    Usage:  <div id="price-ladder"></div>  anywhere on a page.
+   (The mount id is kept for structural stability; the visible copy talks
+   about "the lineup".)
 
    On the homepage (data-page="home") it renders the FULL staircase.
    On a series page it renders the compact WIDGET:
-     - all six rungs, current one highlighted
+     - all eight series, current one highlighted
      - "Next step up" / "Next step down" cards with a one-line reason
    -------------------------------------------------------------------------- */
 function renderLadder() {
@@ -189,7 +226,7 @@ function renderLadder() {
   const currentIdx = SERIES.findIndex((s) => s.id === CURRENT_PAGE);
   const isWidget = currentIdx !== -1; // full staircase on home/compare, widget on series pages
 
-  /* --- the six rungs (shared by both variants) --- */
+  /* --- the series cards (shared by both variants) --- */
   const rungs = SERIES.map((s, i) => {
     const isCurrent = i === currentIdx;
     return `
@@ -219,8 +256,8 @@ function renderLadder() {
                  <span class="step-label">▲ Next step up · ${up.name} · ${up.priceBand}*</span>
                  <span class="step-why">${up.stepUpWhy}</span>
                </a>`
-            : `<div class="step-card step-top"><span class="step-label">★ Top of the ladder</span>
-                 <span class="step-why">The QX is Bennington's flagship — there is no step above.</span></div>`
+            : `<div class="step-card step-top"><span class="step-label">★ Top of the lineup</span>
+                 <span class="step-why">The QX is Bennington's flagship. There is no step above.</span></div>`
         }
         ${
           down
@@ -229,17 +266,17 @@ function renderLadder() {
                  <span class="step-why">${down.stepDownWhy}</span>
                </a>`
             : `<div class="step-card step-bottom"><span class="step-label">● Entry point</span>
-                 <span class="step-why">The S Series is where the Bennington ladder begins.</span></div>`
+                 <span class="step-why">The S One Series is where the Bennington lineup begins.</span></div>`
         }
       </div>`;
   }
 
   mount.innerHTML = `
-    <section class="ladder ${isWidget ? "ladder-widget" : "ladder-full"}" aria-label="Bennington price ladder">
+    <section class="ladder ${isWidget ? "ladder-widget" : "ladder-full"}" aria-label="Bennington lineup navigator">
       <div class="wrap">
         ${
           isWidget
-            ? `<p class="eyebrow">The Price Ladder</p>
+            ? `<p class="eyebrow">The Lineup</p>
                <h2 class="ladder-title">Where the ${SERIES[currentIdx].name} sits in the lineup</h2>`
             : ""
         }

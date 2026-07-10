@@ -4,7 +4,7 @@
    Palette: navy / white / sand (boating-lifestyle).
    All colors live in the :root variables below — retheme in one place.
    Sections:
-     1. Tokens & reset          4. Price ladder (full + widget)
+     1. Tokens & reset          4. Lineup navigator (full + widget)
      2. Nav & footer            5. Series-page template
      3. Homepage hero           6. Compare table  ·  7. Responsive
    ========================================================================== */
@@ -132,8 +132,8 @@ ul, ol { list-style: none; }
 .section-head h2 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; letter-spacing: -0.01em; }
 .section-head .section-sub { margin-top: 12px; color: var(--muted); }
 
-/* homepage helper cards under the ladder */
-.home-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
+/* homepage helper cards under the lineup */
+.home-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 8px; }
 .home-card {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 24px; box-shadow: var(--shadow);
@@ -141,26 +141,26 @@ ul, ol { list-style: none; }
 .home-card h3 { font-size: 16.5px; margin-bottom: 8px; }
 .home-card p { font-size: 14px; color: var(--muted); }
 
-/* ---------- 4. PRICE LADDER ---------- */
+/* ---------- 4. LINEUP NAVIGATOR ---------- */
 .ladder-full { padding: 72px 0 20px; }
 .ladder-widget { padding: 56px 0 8px; border-top: 1px solid var(--line); margin-top: 64px; }
 .ladder-title { font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin-bottom: 26px; }
 
-/* The rail: 6 rungs, entry -> flagship. On desktop it reads left-to-right as
-   an ascending staircase (each rung lifts a bit more via --i). */
-.ladder-rail { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; align-items: end; }
-.ladder-rail > li { transform: translateY(calc(var(--i) * -6px)); }
+/* The rail: 8 series, entry -> flagship. On desktop it reads left-to-right as
+   an ascending staircase (each card lifts a bit more via --i). */
+.ladder-rail { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; align-items: end; }
+.ladder-rail > li { transform: translateY(calc(var(--i) * -5px)); }
 
 .rung {
   display: grid; gap: 3px; position: relative;
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 18px 16px 16px; height: 100%;
+  padding: 16px 13px 14px; height: 100%;
   border-bottom: 4px solid var(--navy-600);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 .rung:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .rung-num { font-size: 11px; font-weight: 800; color: var(--sand-600); letter-spacing: 0.18em; }
-.rung-name { font-weight: 800; font-size: 16.5px; }
+.rung-name { font-weight: 800; font-size: 15px; }
 .rung-tag { font-size: 12px; color: var(--muted); line-height: 1.4; }
 .rung-price { margin-top: 8px; font-weight: 800; font-size: 14px; color: var(--navy-700); }
 
@@ -263,6 +263,12 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom: none; }
 
 /* ---------- 7. RESPONSIVE ---------- */
+@media (max-width: 1100px) {
+  /* 8 cards get cramped below ~1100px: fall back to a 4x2 grid */
+  .ladder-rail { grid-template-columns: repeat(4, 1fr); }
+  .ladder-rail > li { transform: none; }
+  .home-cards { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 920px) {
   .hero-inner, .series-hero-inner { grid-template-columns: 1fr; padding-top: 56px; text-align: center; }
   .hero .lede, .series-hero .series-tagline { margin-left: auto; margin-right: auto; }
