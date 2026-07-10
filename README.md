@@ -1,4 +1,4 @@
-# DealerMeeting — Bennington 2026 Lineup Site
+# DealerMeeting — Bennington 2027 Lineup Site
 
 Static marketing site for a Bennington pontoon dealership. Walks shoppers through the
 full lineup from entry to flagship: **S One → S → LX → M → R → RX → Q → QX**.

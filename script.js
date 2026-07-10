@@ -25,7 +25,7 @@
    1. SERIES DATA — ordered from entry (S One) to flagship (QX).
    ---------------------------------------------------------------------------
    short:      the label used in the top nav.
-   priceBand:  PLACEHOLDER bands — replace with real MY26 dealer MSRP figures
+   priceBand:  PLACEHOLDER bands — replace with real MY27 dealer MSRP figures
                before launch. Keep them ascending S One -> QX.
    stepUpWhy:  the one-line reason to move UP TO this series (shown on the
                page of the series directly below it).
@@ -86,7 +86,7 @@ const SERIES = [
     stepUpWhy:
       "Step up to M for the soul of the lineup, with more standard equipment and exclusive layouts.",
     stepDownWhy:
-      "Step down to M for a more budget-friendly boat that keeps the 2026 Sport/Luxe refresh.",
+      "Step down to M for a more budget-friendly boat that keeps the 2027 Sport/Luxe refresh.",
   },
   {
     id: "r",
@@ -135,19 +135,19 @@ const SERIES = [
     name: "QX Series",
     short: "QX",
     page: "qx.html",
-    tag: "Flagship · All-New for 2026",
-    tagline: "The pinnacle, fully redesigned for 2026.",
+    tag: "Flagship · All-New for 2027",
+    tagline: "The pinnacle, fully redesigned for 2027.",
     priceBand: "$150K+", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQX.png",
     stepUpWhy:
-      "Step up to QX for the fully redesigned 2026 flagship: Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
+      "Step up to QX for the fully redesigned 2027 flagship: Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
     stepDownWhy: "", /* nothing above the QX */
   },
 ];
 
 /* Pricing fine print shown wherever a price band appears. */
 const PRICE_DISCLAIMER =
-  "Starting MSRP, MY26. Excludes destination fee, options, and dealer fees. " +
+  "Starting MSRP, MY27. Excludes destination fee, options, and dealer fees. " +
   "Contact your dealer for exact pricing. (Price bands shown are placeholders.)";
 
 /* Which page are we on? Set via <body data-page="..."> on every page. */
@@ -201,7 +201,7 @@ function renderFooter() {
           <span class="brand-mark dark" aria-hidden="true"></span>
           <span>BENNINGTON</span>
         </div>
-        <p>&copy; ${new Date().getFullYear()} · Dealer lineup walkthrough. Not affiliated with
+        <p>&copy; ${Math.max(new Date().getFullYear(), 2027)} · Dealer lineup walkthrough. Not affiliated with
         Bennington Marine. ${PRICE_DISCLAIMER}</p>
       </div>
     </footer>`;
