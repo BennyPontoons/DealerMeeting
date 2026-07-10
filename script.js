@@ -41,7 +41,7 @@ const SERIES = [
     tag: "Entry · Simple Value",
     tagline: "The simplest, most affordable way into a new Bennington.",
     priceBand: "$25K–$35K", /* PLACEHOLDER — replace with real MSRP */
-    photo: "images/placeholder-boat.svg", /* PLACEHOLDER image — swap for real S One photo */
+    photo: "Final_NoBackground/NoBackgroundS-ONE.png",
     stepUpWhy: "", /* nothing below the S One */
     stepDownWhy:
       "Step down to S One for the lowest-cost way into a new Bennington.",
@@ -54,7 +54,7 @@ const SERIES = [
     tag: "Have It Your Way",
     tagline: "The customizable core of the Bennington family.",
     priceBand: "$35K–$55K", /* PLACEHOLDER — replace with real MSRP */
-    photo: "NO Background boat photots/NoBackgroundS-series.png",
+    photo: "Final_NoBackground/NoBackgroundS-series.png",
     stepUpWhy:
       "Step up to S for the have-it-your-way line with far more upgrades, colors, and floorplans.",
     stepDownWhy:
@@ -68,7 +68,7 @@ const SERIES = [
     tag: "Elevated Step-Up",
     tagline: "A sleeker, better-equipped step beyond the S.",
     priceBand: "$45K–$65K", /* PLACEHOLDER — replace with real MSRP */
-    photo: "images/placeholder-boat.svg", /* PLACEHOLDER image — swap for real LX photo */
+    photo: "Final_NoBackground/NoBackgroundLX.png",
     stepUpWhy:
       "Step up to LX for a sleeker look and more standard equipment than the S.",
     stepDownWhy:
@@ -82,7 +82,7 @@ const SERIES = [
     tag: "Soul of the Lineup",
     tagline: "More standard equipment, more floorplans, the heart of Bennington.",
     priceBand: "$50K–$70K", /* PLACEHOLDER — replace with real MSRP */
-    photo: "NO Background boat photots/NoBackgroundM.png",
+    photo: "Final_NoBackground/NoBackgroundM.png",
     stepUpWhy:
       "Step up to M for the soul of the lineup, with more standard equipment and exclusive layouts.",
     stepDownWhy:
@@ -96,7 +96,7 @@ const SERIES = [
     tag: "Performance · Most Customizable",
     tagline: "Dynamic performance with extensive luxury floorplans.",
     priceBand: "$70K–$95K", /* PLACEHOLDER — replace with real MSRP */
-    photo: "NO Background boat photots/NoBackgroundR.png",
+    photo: "Final_NoBackground/NoBackgroundR.png",
     stepUpWhy:
       "Step up to R for more luxury floorplans, deeper customization, and dynamic performance.",
     stepDownWhy:
@@ -110,7 +110,7 @@ const SERIES = [
     tag: "Sport · Athletic Silhouette",
     tagline: "Sport-tuned performance wrapped in plush comfort.",
     priceBand: "$95K–$120K", /* PLACEHOLDER — replace with real MSRP */
-    photo: "NO Background boat photots/NobackgroundRX.png",
+    photo: "Final_NoBackground/NobackgroundRX.png",
     stepUpWhy:
       "Step up to RX for a sport-tuned, athletic take on the R platform.",
     stepDownWhy:
@@ -124,7 +124,7 @@ const SERIES = [
     tag: "Premium · Luxury Cruising",
     tagline: "Luxury amenities and performance, one step below the flagship.",
     priceBand: "$115K–$150K", /* PLACEHOLDER — replace with real MSRP */
-    photo: "NO Background boat photots/NoBackgroundQ.png",
+    photo: "Final_NoBackground/NoBackgroundQ.png",
     stepUpWhy:
       "Step up to Q for premium luxury amenities and refined cruising performance.",
     stepDownWhy:
@@ -138,7 +138,7 @@ const SERIES = [
     tag: "Flagship · All-New for 2026",
     tagline: "The pinnacle, fully redesigned for 2026.",
     priceBand: "$150K+", /* PLACEHOLDER — replace with real MSRP */
-    photo: "NO Background boat photots/NoBackgroundQX.png",
+    photo: "Final_NoBackground/NoBackgroundQX.png",
     stepUpWhy:
       "Step up to QX for the fully redesigned 2026 flagship: Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
     stepDownWhy: "", /* nothing above the QX */

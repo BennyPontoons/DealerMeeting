@@ -9,7 +9,7 @@ Strategy:
    railings, hull paint) is preserved.
 3. Convert the marked region to alpha=0; lightly feather the edges.
 
-Re-run if you re-export from Photoshop. Reads NO Background boat photots/*.jpg
+Re-run if you re-export from Photoshop. Reads Final_NoBackground/*.jpg
 and writes the matching *.png alongside.
 """
 
@@ -51,7 +51,7 @@ def remove_white(input_path: Path, output_path: Path) -> None:
 
 def main() -> None:
     repo_root = Path(__file__).resolve().parent.parent
-    folder = repo_root / "NO Background boat photots"
+    folder = repo_root / "Final_NoBackground"
     jpgs = sorted(folder.glob("*.jpg"))
     if not jpgs:
         print(f"No JPGs found in {folder}")

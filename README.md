@@ -26,9 +26,9 @@ https://sck745.github.io/DealerMeeting/
 1. **Pricing**: the price bands are PLACEHOLDERS. Update them in two places:
    the `SERIES` array in `script.js` (feeds the lineup navigator everywhere), and the
    per-page cost cards / hero chips + the `compare.html` table (marked with comments).
-2. **Photos**: series photos live in `NO Background boat photots/`. The S One and LX
-   pages currently use `images/placeholder-boat.svg`; swap each page's hero `<img>`
-   src when real photos arrive (each has a comment marking the spot).
+2. **Photos**: series photos live in `Final_NoBackground/` (transparent PNGs, one per
+   series). To swap a photo, replace the file there or update that page's hero `<img>`
+   src (each has a comment marking the spot).
 3. **Copy**: overview / features / what's-new sections are plain HTML on each
    series page, marked with `a.` to `e.` comments matching the site spec. The S One
    and LX pages contain placeholder copy to confirm against dealer materials.
