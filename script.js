@@ -40,7 +40,7 @@ const SERIES = [
     page: "s-one.html",
     tag: "Entry · Simple Value",
     tagline: "The simplest, most affordable way into a new Bennington.",
-    priceBand: "$25K–$35K", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$28,403", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundS-ONE.png",
     stepUpWhy: "", /* nothing below the S One */
     stepDownWhy:
@@ -53,7 +53,7 @@ const SERIES = [
     page: "s.html",
     tag: "Have It Your Way",
     tagline: "The customizable core of the Bennington family.",
-    priceBand: "$35K–$55K", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$34,725", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundS-series.png",
     stepUpWhy:
       "Step up to S for the have-it-your-way line with far more upgrades, colors, and floorplans.",
@@ -67,7 +67,7 @@ const SERIES = [
     page: "lx.html",
     tag: "Elevated Step-Up",
     tagline: "A sleeker, better-equipped step beyond the S.",
-    priceBand: "$45K–$65K", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$84,010", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundLX.png",
     stepUpWhy:
       "Step up to LX for a sleeker look and more standard equipment than the S.",
@@ -81,7 +81,7 @@ const SERIES = [
     page: "m.html",
     tag: "Soul of the Lineup",
     tagline: "More standard equipment, more floorplans, the heart of Bennington.",
-    priceBand: "$50K–$70K", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$67,620", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundM.png",
     stepUpWhy:
       "Step up to M for the soul of the lineup, with more standard equipment and exclusive layouts.",
@@ -95,7 +95,7 @@ const SERIES = [
     page: "r.html",
     tag: "Performance · Most Customizable",
     tagline: "Dynamic performance with extensive luxury floorplans.",
-    priceBand: "$70K–$95K", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$98,510", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundR.png",
     stepUpWhy:
       "Step up to R for more luxury floorplans, deeper customization, and dynamic performance.",
@@ -109,7 +109,7 @@ const SERIES = [
     page: "rx.html",
     tag: "Sport · Athletic Silhouette",
     tagline: "Sport-tuned performance wrapped in plush comfort.",
-    priceBand: "$95K–$120K", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$136,565", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NobackgroundRX.png",
     stepUpWhy:
       "Step up to RX for a sport-tuned, athletic take on the R platform.",
@@ -123,7 +123,7 @@ const SERIES = [
     page: "q.html",
     tag: "Premium · Luxury Cruising",
     tagline: "Luxury amenities and performance, one step below the flagship.",
-    priceBand: "$115K–$150K", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$115,275", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQ.png",
     stepUpWhy:
       "Step up to Q for premium luxury amenities and refined cruising performance.",
@@ -137,7 +137,7 @@ const SERIES = [
     page: "qx.html",
     tag: "Flagship · All-New for 2027",
     tagline: "The pinnacle, fully redesigned for 2027.",
-    priceBand: "$150K+", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$151,225", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQX.png",
     stepUpWhy:
       "Step up to QX for the fully redesigned 2027 flagship: Commander Dash 2.0, carbon fiber, up to 1,000 HP.",
