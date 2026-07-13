@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s https://api.github.com/repos/SCK745/DealerMeeting)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('default_branch:', d.get\\('default_branch'\\), '| size:', d.get\\('size'\\), '| has_pages:', d.get\\('has_pages'\\), '| pushed_at:', d.get\\('pushed_at'\\)\\)\")",
+      "Bash(mv \"NO background LX copy.png\" NoBackgroundLX.png)",
+      "Bash(grep -rn \"boat photots\\\\|placeholder-boat\" ../scripts/)",
+      "Bash(python3 -)",
+      "Bash(git rm *)",
+      "Bash(echo \"refs remaining: $? \\(1 = none\\)\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Swap all series photos to Final_NoBackground set *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'Update all model-year references from 2026 to 2027 *)",
+      "Bash(curl -s https://sck745.github.io/DealerMeeting/index.html)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g hasAlpha Logo_Images/bennington_white_clean.png)",
+      "Bash(git commit -m 'Use Bennington wordmark logo in header and footer *)"
+    ]
+  }
+}
