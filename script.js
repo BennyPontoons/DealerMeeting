@@ -170,7 +170,7 @@ const SERIES = [
    -------------------------------------------------------------------------- */
 const BOATS = {
   "s-one": ["188S1L", "20S1SR", "22S1SB"],
-  "s": ["22SSB", "22SSR", "20SSR-LUXE", "23QC-LUXE", "22SSR-LUXE", "22SSB-SPORT", "25SSB-LUXE"],
+  "s": ["22SSB", "22SSR", "20SSR-LUXE", "23SQC-LUXE", "22SSR-LUXE", "22SSB-SPORT", "25SSB-LUXE"],
   "lx": ["23LXSSB"],
   "m": ["21ML", "22MFC", "22MFB", "23MOFB-SPORT/30LE", "24MSL-SPORT/30LE", "24MCSB-LUXE", "26MSB-LUXE"],
   "r": ["23RSB-30LE", "25RSBA", "27RFBWAT2-30LE", "25RFBWA"],
