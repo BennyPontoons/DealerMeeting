@@ -109,7 +109,7 @@ const SERIES = [
     page: "rt.html",
     tag: "Performance · Open Bow",
     tagline: "R-family performance with an open bow built for action.",
-    priceBand: "$70K–$90K", /* PLACEHOLDER — replace with real RT MSRP */
+    priceBand: "$128,410", /* PLACEHOLDER — replace with real RT MSRP */
     photo: "Final_NoBackground/NoBckgroundBowRider.png",
     stepUpWhy:
       "Step up to RT for an open-bow layout that adds runabout versatility to R-family performance.",
@@ -162,7 +162,7 @@ const SERIES = [
 /* Pricing fine print shown wherever a price band appears. */
 const PRICE_DISCLAIMER =
   "Starting MSRP, MY27. Excludes destination fee, options, and dealer fees. " +
-  "Contact your dealer for exact pricing. (Price bands shown are placeholders.)";
+  "Contact your dealer for exact pricing.";
 
 /* Which page are we on? Set via <body data-page="..."> on every page. */
 const CURRENT_PAGE = document.body.dataset.page || "home";
