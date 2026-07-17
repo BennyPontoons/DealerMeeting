@@ -17,8 +17,8 @@
                                             cards at the bottom of each
                                             series page
    Each page declares itself with  <body data-page="s">  (or "s-one", "lx",
-   "m", "r", "rx", "q", "qx", "home", "compare"). The nav highlight and
-   lineup highlight key off that attribute.
+   "bowrider", "m", "r", "rx", "q", "qx", "home", "compare"). The nav
+   highlight and lineup highlight key off that attribute.
    ========================================================================== */
 
 /* ---------------------------------------------------------------------------
@@ -73,6 +73,20 @@ const SERIES = [
       "Step up to LX for a sleeker look and more standard equipment than the S.",
     stepDownWhy:
       "Step down to LX for a lighter price in a streamlined, well-equipped package.",
+  },
+  {
+    id: "bowrider",
+    name: "Bowrider Series",
+    short: "Bowrider",
+    page: "bowrider.html",
+    tag: "Open-Bow Versatility",
+    tagline: "Bennington comfort with an open bow built for action.",
+    priceBand: "$70K–$90K", /* PLACEHOLDER — replace with real Bowrider MSRP */
+    photo: "Final_NoBackground/NoBckgroundBowRider.png",
+    stepUpWhy:
+      "Step up to Bowrider for an open-bow layout that blends pontoon comfort with runabout versatility.",
+    stepDownWhy:
+      "Step down to Bowrider for open-bow versatility at a friendlier price.",
   },
   {
     id: "m",
@@ -154,7 +168,7 @@ const PRICE_DISCLAIMER =
 const CURRENT_PAGE = document.body.dataset.page || "home";
 
 /* ---------------------------------------------------------------------------
-   2. NAV BAR — Home | S One | S | LX | M | R | RX | Q | QX | Compare
+   2. NAV BAR — Home | S One | S | LX | Bowrider | M | R | RX | Q | QX | Compare
    -------------------------------------------------------------------------- */
 function renderNav() {
   const mount = document.getElementById("site-nav");
@@ -214,7 +228,7 @@ function renderFooter() {
 
    On the homepage (data-page="home") it renders the FULL staircase.
    On a series page it renders the compact WIDGET:
-     - all eight series, current one highlighted
+     - all nine series, current one highlighted
      - "Next step up" / "Next step down" cards with a one-line reason
    -------------------------------------------------------------------------- */
 function renderLadder() {
