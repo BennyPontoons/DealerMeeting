@@ -95,7 +95,7 @@ const SERIES = [
     page: "lt.html",
     tag: "Refined Step-Up", /* PLACEHOLDER positioning — confirm with dealer materials */
     tagline: "A refined step-up just above the LX.", /* PLACEHOLDER */
-    priceBand: "TBD", /* PLACEHOLDER — replace with real LT MSRP */
+    priceBand: "92,585", /* PLACEHOLDER — replace with real LT MSRP */
     photo: "Final_NoBackground/LT-Series.png",
     stepUpWhy:
       "Step up to LT for a more refined, better-appointed take on the step-up class.", /* PLACEHOLDER */
