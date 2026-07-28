@@ -360,7 +360,7 @@ function renderBoatMenu() {
   select.className = "boat-select";
   select.setAttribute("aria-label", "View a specific model in this series");
   select.innerHTML = `
-    <option value="" disabled ${currentBoat ? "" : "selected"}>View Models (${models.length})</option>
+    <option value="" disabled ${currentBoat ? "" : "selected"}>Models On Display (${models.length})</option>
     ${models
       .map(
         (code) =>
