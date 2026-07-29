@@ -80,7 +80,7 @@ TEMPLATE = """<!DOCTYPE html>
   <section class="series-section">
     <div class="wrap">
       <p class="eyebrow">Options</p>
-      <h2>Available options</h2>
+      <h2>Selected Options</h2>
       <ul class="feature-list">
         <li>Placeholder: add option packages for the {code} here</li>
         <li>Placeholder: engine choices</li>
