@@ -76,7 +76,7 @@ const SERIES = [
   },
   {
     id: "lx",
-    name: "LX Series",
+    name: "LX Line",
     short: "LX",
     page: "lx.html",
     tag: "Elevated Step-Up",
@@ -132,7 +132,7 @@ const SERIES = [
   },
   {
     id: "rx",
-    name: "RX Series",
+    name: "RX Line",
     short: "RX",
     page: "rx.html",
     tag: "Sport · Athletic Silhouette",
@@ -160,7 +160,7 @@ const SERIES = [
   },
   {
     id: "qx",
-    name: "QX Series",
+    name: "QX Line",
     short: "QX",
     page: "qx.html",
     tag: "Flagship · Boating Industry 2026 Top Product",
