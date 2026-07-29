@@ -218,9 +218,6 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
   font-weight: 700; font-size: 14px; color: var(--sand-200);
 }
 .series-photo { filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.45)); }
-/* S One only: render its hero photo slightly larger than the shared size.
-   Scoped to the S One page so no other series photo changes. */
-body[data-page="s-one"] .series-photo { transform: scale(1.1); transform-origin: center; }
 
 /* Boat-model dropdown — styled to match the price chips beside it */
 .boat-select {
