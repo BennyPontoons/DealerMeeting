@@ -38,7 +38,7 @@ const SERIES = [
     name: "S One Series",
     short: "S One",
     page: "s-one.html",
-    tag: "Entry · Simple Value",
+    tag: "Premium Boating Made Simple",
     tagline: "The simplest, most affordable way into a new Bennington.",
     priceBand: "$28,403", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundS-ONE.png",
@@ -51,7 +51,7 @@ const SERIES = [
     name: "S Series",
     short: "S",
     page: "s.html",
-    tag: "Have It Your Way",
+    tag: "Built For Every Adventure",
     tagline: "The customizable core of the Bennington family.",
     priceBand: "$34,725", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundS-series.png",
@@ -65,7 +65,7 @@ const SERIES = [
     name: "M Series",
     short: "M",
     page: "m.html",
-    tag: "Soul of the Lineup",
+    tag: "Modern Luxury, Refined",
     tagline: "More standard equipment, more floorplans, the heart of Bennington.",
     priceBand: "$67,620", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundM.png",
@@ -79,7 +79,7 @@ const SERIES = [
     name: "LX Line",
     short: "LX",
     page: "lx.html",
-    tag: "Elevated Step-Up",
+    tag: "Luxury Fueled by Performance",
     tagline: "A sleeker, better-equipped step beyond the S.",
     priceBand: "$84,010", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundLX.png",
@@ -93,7 +93,7 @@ const SERIES = [
     name: "LT Series",
     short: "LT",
     page: "lt.html",
-    tag: "Refined Step-Up", /* PLACEHOLDER positioning — confirm with dealer materials */
+    tag: "Elevated Comfort. Exceptional Value", /* PLACEHOLDER positioning — confirm with dealer materials */
     tagline: "A refined step-up just above the LX.", /* PLACEHOLDER */
     priceBand: "92,585", /* PLACEHOLDER — replace with real LT MSRP */
     photo: "Final_NoBackground/LT-Series.png",
@@ -107,7 +107,7 @@ const SERIES = [
     name: "R Series",
     short: "R",
     page: "r.html",
-    tag: "Performance · Most Customizable",
+    tag: "Boldly Designed. Unmistakably Bennington",
     tagline: "Dynamic performance with extensive luxury floorplans.",
     priceBand: "$98,510", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundR.png",
@@ -121,7 +121,7 @@ const SERIES = [
     name: "RT Series",
     short: "RT",
     page: "rt.html",
-    tag: "Performance · Open Bow",
+    tag: "Refined Luxury. Confident Presence",
     tagline: "R-family performance with an open bow built for action.",
     priceBand: "$128,410", /* PLACEHOLDER — replace with real RT MSRP */
     photo: "Final_NoBackground/NoBckgroundBowRider.png",
@@ -135,7 +135,7 @@ const SERIES = [
     name: "RX Line",
     short: "RX",
     page: "rx.html",
-    tag: "Sport · Athletic Silhouette",
+    tag: "Luxury Elvevated Beyond Expectations",
     tagline: "Sport-tuned performance wrapped in plush comfort.",
     priceBand: "$136,565", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NobackgroundRX.png",
@@ -149,7 +149,7 @@ const SERIES = [
     name: "Q Series",
     short: "Q",
     page: "q.html",
-    tag: "Premium · Luxury Cruising",
+    tag: "The Benchmark of Luxury Boating",
     tagline: "Luxury amenities and performance, one step below the flagship.",
     priceBand: "$115,275", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQ.png",
@@ -163,7 +163,7 @@ const SERIES = [
     name: "QX Line",
     short: "QX",
     page: "qx.html",
-    tag: "Flagship · Boating Industry 2026 Top Product",
+    tag: "The Pinnacle of Pontoon Innovation",
     tagline: "Beyond Luxury, Boating industry 2026 Top Product.",
     priceBand: "$151,225", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQX.png",
