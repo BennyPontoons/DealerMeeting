@@ -265,10 +265,12 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 /* MSRP tag shown above Boat Specifications on step-target pages (dark pill so
    it reads on the light section background) */
 .msrp-tag {
-  display: inline-block; margin-bottom: 14px; padding: 8px 16px;
+  display: inline-block; padding: 8px 16px;
   border-radius: 999px; background: var(--navy-800); color: var(--sand-200);
   font-weight: 800; font-size: 14px; letter-spacing: 0.02em;
 }
+/* the standalone MSRP section sits between the title and the specs */
+.msrp-section { padding: 40px 0 0; }
 
 /* feature + what's-new bullet lists */
 .feature-list, .new-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 900px; }
