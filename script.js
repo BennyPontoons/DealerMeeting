@@ -199,9 +199,12 @@ function boatSlug(code) {
   return code.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
-/* Boat pages live in boats/, one level down — prefix internal links so the
-   shared nav/footer/lineup components work from both locations. */
-const PFX = location.pathname.includes("/boats/") ? "../" : "";
+/* Boat pages live in boats/ (one level down) and step-target pages in
+   boats/steps/ (two levels down) — prefix internal links so the shared
+   nav/footer components resolve from every location. */
+const PFX = location.pathname.includes("/boats/steps/") ? "../../"
+          : location.pathname.includes("/boats/") ? "../"
+          : "";
 
 /* Pricing fine print shown wherever a price band appears. */
 const PRICE_DISCLAIMER =
@@ -398,6 +401,7 @@ const BOAT_STEPS = {
   "22mfb":          { up: "23lxsfb",    down: "22ssr" },
   "26msb-luxe":     { up: "25ssb",      down: "25lxssb" },
   "23lxssb":        { up: "23rsb",      down: "23msb" },
+  "25rtsba":        { up: null,         down: "ltsba" },
   "23rsb-30le":     { up: "23qsb",      down: "23lxssb" },
   "25rsba":         { up: "25qsba",     down: "25lxssba" },
   "27rfbwat2-30le": { up: "27qfbwat2",  down: null },
@@ -405,12 +409,11 @@ const BOAT_STEPS = {
   "25rxfba":        { up: "25qxfba",    down: "25qfba" },
   "27rxsbwat2":     { up: "27qxsbwat2", down: "27rsbwat2" },
   "25qsba":         { up: "25rxsba",    down: "25rsba" },
-  "25qxsba":        { up: "25qxsbax2",  down: "25rxsba" }, /* your "rxsba" -> 25rxsba (confirm) */
+  "25qxsba":        { up: "25qxsbax2",  down: "rxsba" },
   "27qxfbat2":      { up: "30qxfbwax2", down: "27rfbwat2" }, /* your key "27qxfbwat2" */
   "27qxfbax2-30le": { up: null,         down: "27qfbax2" }, /* your key "27qxfbax2" */
   "30qxsbwax2":     { up: null,         down: "30qsbwax2" },
-  /* 25rtsba: step-down "ltsba" is on hold (page not built) -> no buttons yet.
-     23sqc-luxe, 23mofb-sport-30le, 24msl-sport-30le, 24mcsb-luxe: both N/A. */
+  /* 23sqc-luxe, 23mofb-sport-30le, 24msl-sport-30le, 24mcsb-luxe: both N/A -> no entry. */
 };
 
 function renderBoatSteps() {
@@ -422,7 +425,7 @@ function renderBoatSteps() {
 
   const card = (dir, target) =>
     target
-      ? `<a class="step-card step-${dir}" href="${target}.html">
+      ? `<a class="step-card step-${dir}" href="steps/${target}.html">
            <span class="step-label">${dir === "up" ? "▲ Step Up" : "▼ Step Down"}</span>
            <span class="step-why">${target.toUpperCase()}</span>
          </a>`
