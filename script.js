@@ -199,12 +199,9 @@ function boatSlug(code) {
   return code.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
-/* Boat pages live in boats/ (one level down) and step-target pages in
-   boats/steps/ (two levels down) — prefix internal links so the shared
-   nav/footer components resolve from every location. */
-const PFX = location.pathname.includes("/boats/steps/") ? "../../"
-          : location.pathname.includes("/boats/") ? "../"
-          : "";
+/* Boat pages live in boats/, one level down — prefix internal links so the
+   shared nav/footer/lineup components resolve from both locations. */
+const PFX = location.pathname.includes("/boats/") ? "../" : "";
 
 /* Pricing fine print shown wherever a price band appears. */
 const PRICE_DISCLAIMER =
@@ -379,89 +376,6 @@ function renderBoatMenu() {
 }
 
 /* ---------------------------------------------------------------------------
-   6. BOAT STEP UP / STEP DOWN — rendered into <div id="boat-steps"></div> at
-   the bottom of each ORIGINAL boat page (replaces the series lineup navigator
-   there). Each boat links to a specific step-up / step-down MODEL page.
-   ---------------------------------------------------------------------------
-   Keyed by the page's file slug. up/down are the target page slugs (or null).
-   EDIT MAPPINGS HERE. Boats with no entry (or both null) show no step buttons.
-   -------------------------------------------------------------------------- */
-const BOAT_STEPS = {
-  "188s1l":         { up: "188sl",      down: null },
-  "20s1sr":         { up: "20ssb",      down: null },
-  "22s1sb":         { up: "22ssb",      down: null },
-  "22ssb":          { up: "22msb",      down: "22s1sb" },
-  "22ssr":          { up: "22mfb",      down: "22s1sr" },
-  "20ssr-luxe":     { up: "21mfb",      down: "20s1sr" },
-  "22ssr-luxe":     { up: "22mfb",      down: "22s1sr" },
-  "22ssb-sport":    { up: "22msb",      down: "22s1sb" },
-  "25ssb-luxe":     { up: null,         down: "26msb" },
-  "21ml":           { up: null,         down: "21sl" },
-  "22mfc":          { up: null,         down: "22sfc" },
-  "22mfb":          { up: "23lxsfb",    down: "22ssr" },
-  "26msb-luxe":     { up: "25ssb",      down: "25lxssb" },
-  "23lxssb":        { up: "23rsb",      down: "23msb" },
-  "25rtsba":        { up: null,         down: "ltsba" },
-  "23rsb-30le":     { up: "23qsb",      down: "23lxssb" },
-  "25rsba":         { up: "25qsba",     down: "25lxssba" },
-  "27rfbwat2-30le": { up: "27qfbwat2",  down: null },
-  "25rfbwa":        { up: "25qfbwa",    down: "25lxsfba" },
-  "25rxfba":        { up: "25qxfba",    down: "25qfba" },
-  "27rxsbwat2":     { up: "27qxsbwat2", down: "27rsbwat2" },
-  "25qsba":         { up: "25rxsba",    down: "25rsba" },
-  "25qxsba":        { up: "25qxsbax2",  down: "rxsba" },
-  "27qxfbat2":      { up: "30qxfbwax2", down: "27rfbwat2" }, /* your key "27qxfbwat2" */
-  "27qxfbax2-30le": { up: null,         down: "27qfbax2" }, /* your key "27qxfbax2" */
-  "30qxsbwax2":     { up: null,         down: "30qsbwax2" },
-  /* 23sqc-luxe, 23mofb-sport-30le, 24msl-sport-30le, 24mcsb-luxe: both N/A -> no entry. */
-};
-
-function renderBoatSteps() {
-  const mount = document.getElementById("boat-steps");
-  if (!mount) return;
-  const slug = (location.pathname.split("/").pop() || "").replace(/\.html$/, "");
-  const steps = BOAT_STEPS[slug];
-  if (!steps || (!steps.up && !steps.down)) return;
-
-  const card = (dir, target) =>
-    target
-      ? `<a class="step-card step-${dir}" href="steps/${target}.html?from=${slug}">
-           <span class="step-label">${dir === "up" ? "▲ Step Up" : "▼ Step Down"}</span>
-           <span class="step-why">${target.toUpperCase()}</span>
-         </a>`
-      : "";
-
-  mount.innerHTML = `
-    <section class="ladder ladder-widget" aria-label="Step up or step down to a comparable model">
-      <div class="wrap">
-        <p class="eyebrow">Compare</p>
-        <h2 class="ladder-title">Step Up or Step Down</h2>
-        <div class="ladder-steps">
-          ${card("up", steps.up)}
-          ${card("down", steps.down)}
-        </div>
-      </div>
-    </section>`;
-}
-
-/* ---------------------------------------------------------------------------
-   7. BACK TO DISPLAY BOAT — on a step-target page (boats/steps/), points the
-   "Back to Display Boat" button at the display boat the user stepped from.
-   The step buttons pass ?from=<display-slug>; we read it and link back to it.
-   Falls back to browser history if there's no ?from (e.g. a direct visit).
-   -------------------------------------------------------------------------- */
-function renderBackToDisplay() {
-  const el = document.getElementById("back-to-display");
-  if (!el) return;
-  const from = new URLSearchParams(location.search).get("from");
-  if (from && /^[a-z0-9-]+$/.test(from)) {
-    el.href = "../" + from + ".html"; // steps/ -> boats/<display>.html
-  } else {
-    el.addEventListener("click", (e) => { e.preventDefault(); history.back(); });
-  }
-}
-
-/* ---------------------------------------------------------------------------
    Reveal-on-scroll — light touch, purely cosmetic.
    -------------------------------------------------------------------------- */
 function initReveal() {
@@ -487,7 +401,5 @@ function initReveal() {
 renderNav();
 renderFooter();
 renderLadder();
-renderBoatSteps();
 renderBoatMenu();
-renderBackToDisplay();
 initReveal();
