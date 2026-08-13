@@ -425,7 +425,7 @@ function renderBoatSteps() {
 
   const card = (dir, target) =>
     target
-      ? `<a class="step-card step-${dir}" href="steps/${target}.html">
+      ? `<a class="step-card step-${dir}" href="steps/${target}.html?from=${slug}">
            <span class="step-label">${dir === "up" ? "▲ Step Up" : "▼ Step Down"}</span>
            <span class="step-why">${target.toUpperCase()}</span>
          </a>`
@@ -442,6 +442,23 @@ function renderBoatSteps() {
         </div>
       </div>
     </section>`;
+}
+
+/* ---------------------------------------------------------------------------
+   7. BACK TO DISPLAY BOAT — on a step-target page (boats/steps/), points the
+   "Back to Display Boat" button at the display boat the user stepped from.
+   The step buttons pass ?from=<display-slug>; we read it and link back to it.
+   Falls back to browser history if there's no ?from (e.g. a direct visit).
+   -------------------------------------------------------------------------- */
+function renderBackToDisplay() {
+  const el = document.getElementById("back-to-display");
+  if (!el) return;
+  const from = new URLSearchParams(location.search).get("from");
+  if (from && /^[a-z0-9-]+$/.test(from)) {
+    el.href = "../" + from + ".html"; // steps/ -> boats/<display>.html
+  } else {
+    el.addEventListener("click", (e) => { e.preventDefault(); history.back(); });
+  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -472,4 +489,5 @@ renderFooter();
 renderLadder();
 renderBoatSteps();
 renderBoatMenu();
+renderBackToDisplay();
 initReveal();
