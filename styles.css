@@ -184,6 +184,8 @@ ul, ol { list-style: none; }
 
 /* step-up / step-down cards */
 .ladder-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; }
+/* a lone step card (boat has only a step-up OR step-down) spans the full width */
+.ladder-steps .step-card:only-child { grid-column: 1 / -1; }
 .step-card {
   display: grid; gap: 6px; background: var(--white);
   border: 1px solid var(--line); border-left: 4px solid var(--navy-600);
