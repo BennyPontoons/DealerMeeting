@@ -109,7 +109,7 @@ const SERIES = [
     page: "r.html",
     tag: "Boldly Designed. Unmistakably Bennington",
     tagline: "Dynamic performance with extensive luxury floorplans.",
-    priceBand: "$129,659", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$112,487", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundR.png",
     stepUpWhy:
       "Step up to R for more luxury floorplans, deeper customization, and dynamic performance.",
