@@ -299,31 +299,37 @@ function renderLadder() {
       </li>`;
   }).join("");
 
-  /* --- step-up / step-down cards (widget variant only) --- */
+  /* --- step-up / step-down cards (widget variant only).
+     Layout: DOWN card on the left, UP card on the right.
+     The LT and RT series are skipped as step targets. --- */
   let stepCards = "";
   if (isWidget) {
-    const up = SERIES[currentIdx + 1]; // series directly ABOVE
-    const down = SERIES[currentIdx - 1]; // series directly BELOW
+    const SKIP = new Set(["lt", "rt"]);
+    let up = null, down = null;
+    for (let i = currentIdx + 1; i < SERIES.length; i++) {
+      if (!SKIP.has(SERIES[i].id)) { up = SERIES[i]; break; }
+    }
+    for (let i = currentIdx - 1; i >= 0; i--) {
+      if (!SKIP.has(SERIES[i].id)) { down = SERIES[i]; break; }
+    }
+    const downCard = down
+      ? `<a class="step-card step-down" href="${PFX}${down.page}">
+           <span class="step-label">▼ Next step down · ${down.name} · ${down.priceBand}*</span>
+           <span class="step-why">${down.stepDownWhy}</span>
+         </a>`
+      : `<div class="step-card step-bottom"><span class="step-label">● Entry point</span>
+           <span class="step-why">The S One Series is where the Bennington lineup begins.</span></div>`;
+    const upCard = up
+      ? `<a class="step-card step-up" href="${PFX}${up.page}">
+           <span class="step-label">▲ Next step up · ${up.name} · ${up.priceBand}*</span>
+           <span class="step-why">${up.stepUpWhy}</span>
+         </a>`
+      : `<div class="step-card step-top"><span class="step-label">★ Top of the lineup</span>
+           <span class="step-why">The QX is Bennington's flagship. There is no step above.</span></div>`;
     stepCards = `
       <div class="ladder-steps">
-        ${
-          up
-            ? `<a class="step-card step-up" href="${PFX}${up.page}">
-                 <span class="step-label">▲ Next step up · ${up.name} · ${up.priceBand}*</span>
-                 <span class="step-why">${up.stepUpWhy}</span>
-               </a>`
-            : `<div class="step-card step-top"><span class="step-label">★ Top of the lineup</span>
-                 <span class="step-why">The QX is Bennington's flagship. There is no step above.</span></div>`
-        }
-        ${
-          down
-            ? `<a class="step-card step-down" href="${PFX}${down.page}">
-                 <span class="step-label">▼ Next step down · ${down.name} · ${down.priceBand}*</span>
-                 <span class="step-why">${down.stepDownWhy}</span>
-               </a>`
-            : `<div class="step-card step-bottom"><span class="step-label">● Entry point</span>
-                 <span class="step-why">The S One Series is where the Bennington lineup begins.</span></div>`
-        }
+        ${downCard}
+        ${upCard}
       </div>`;
   }
 
