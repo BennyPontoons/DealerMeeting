@@ -151,7 +151,7 @@ const SERIES = [
     page: "q.html",
     tag: "The Benchmark of Luxury Boating",
     tagline: "Luxury amenities and performance, one step below the flagship.",
-    priceBand: "$148,304 - $338,971", /* PLACEHOLDER — replace with real MSRP */
+    priceBand: "$148,304- $338,971", /* PLACEHOLDER — replace with real MSRP */
     photo: "Final_NoBackground/NoBackgroundQ.png",
     stepUpWhy:
       "Step up to Q for premium luxury amenities and refined cruising performance.",
