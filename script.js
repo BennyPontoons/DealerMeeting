@@ -378,7 +378,51 @@ function renderBoatMenu() {
   select.addEventListener("change", () => {
     if (select.value) location.href = select.value;
   });
-  mount.replaceWith(select);
+
+  // Series page: just the dropdown. Boat page (data-boat set): dropdown +
+  // a "View MSRP Sheet" button that opens this boat's MSRP sheet image.
+  if (!currentBoat) {
+    mount.replaceWith(select);
+    return;
+  }
+  const wrap = document.createElement("span");
+  wrap.className = "menu-row";
+  wrap.appendChild(select);
+  const slug = (location.pathname.split("/").pop() || "").replace(/\.html$/, "");
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "msrp-sheet-btn";
+  btn.textContent = "View MSRP Sheet";
+  btn.addEventListener("click", () => openMsrpSheet(slug));
+  wrap.appendChild(btn);
+  mount.replaceWith(wrap);
+}
+
+/* ---------------------------------------------------------------------------
+   MSRP SHEET LIGHTBOX — "pulls up" a boat's MSRP sheet image over the page.
+   Images live in msrp-sheets/<boat-slug>.png. Close via the X, click-outside,
+   or Escape.
+   -------------------------------------------------------------------------- */
+function openMsrpSheet(slug) {
+  let overlay = document.getElementById("msrp-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "msrp-overlay";
+    overlay.className = "msrp-overlay";
+    overlay.innerHTML =
+      '<button class="msrp-close" type="button" aria-label="Close">&times;</button>' +
+      '<img class="msrp-img" alt="MSRP sheet" />';
+    document.body.appendChild(overlay);
+    const close = () => overlay.classList.remove("open");
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay || e.target.classList.contains("msrp-close")) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+  overlay.querySelector(".msrp-img").src = `${PFX}msrp-sheets/${slug}.png`;
+  overlay.classList.add("open");
 }
 
 /* ---------------------------------------------------------------------------

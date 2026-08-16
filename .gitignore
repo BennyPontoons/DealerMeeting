@@ -6,3 +6,6 @@
 
 # Claude Code local config
 .claude/
+
+# Raw MSRP sheet drop folder (clean copies live in msrp-sheets/)
+MSRP SHEET WEBSITE*/

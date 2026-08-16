@@ -229,6 +229,38 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .boat-select:hover { background: var(--sand-300); }
 .boat-select option { background: var(--white); color: var(--ink); font-weight: 600; }
 
+/* keep the dropdown + MSRP button together as one group when the hero wraps */
+.menu-row { white-space: nowrap; }
+
+/* "View MSRP Sheet" button — sits next to the dropdown in the boat-page hero */
+.msrp-sheet-btn {
+  display: inline-block; margin-top: 20px; margin-left: 8px; padding: 9px 18px;
+  border-radius: 999px; border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent; color: var(--white);
+  font: 700 14px var(--font); cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.msrp-sheet-btn:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--white); }
+
+/* Lightbox overlay for the MSRP sheet image */
+.msrp-overlay {
+  position: fixed; inset: 0; z-index: 100; display: none;
+  background: rgba(11, 24, 38, 0.9); backdrop-filter: blur(4px);
+  padding: 48px 16px; overflow: auto; text-align: center;
+}
+.msrp-overlay.open { display: block; }
+.msrp-img {
+  display: inline-block; max-width: min(1000px, 94vw); width: 100%; height: auto;
+  border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); background: #fff;
+}
+.msrp-close {
+  position: fixed; top: 14px; right: 18px; z-index: 101;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff; font-size: 26px; line-height: 1; cursor: pointer;
+}
+.msrp-close:hover { background: rgba(255, 255, 255, 0.28); }
+
 /* Boat pages: link back to the parent series, styled like a chip */
 .back-chip {
   display: inline-block; margin-top: 20px; margin-right: 8px; padding: 9px 18px;
