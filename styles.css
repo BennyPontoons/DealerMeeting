@@ -218,6 +218,9 @@ a.step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
   font-weight: 700; font-size: 14px; color: var(--sand-200);
 }
 .series-photo { filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.45)); }
+/* real (rectangular) boat photos get rounded corners; the transparent series
+   cutouts are unaffected since their edges are transparent */
+.series-photo-real { border-radius: var(--radius); }
 
 /* Boat-model dropdown — styled to match the price chips beside it */
 .boat-select {

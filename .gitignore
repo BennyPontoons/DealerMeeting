@@ -9,3 +9,6 @@
 
 # Raw MSRP sheet drop folder (clean copies live in msrp-sheets/)
 MSRP SHEET WEBSITE*/
+
+# Raw HEIC boat photos (web-ready JPGs live in boat-photos/)
+Individual Boat Photos/
